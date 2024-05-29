@@ -164,20 +164,26 @@ function openTT() {
 
 function openYouTubeChannel() {
     var channelHandle = '@ADQfm_';
-    var url = 'youtube://www.youtube.com/' + channelHandle;
+    var fallbackUrl = 'https://www.youtube.com/' + channelHandle;
 
-    // Create a link element
-    var link = document.createElement('a');
-    link.href = url;
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.indexOf('android') > -1) {
+        // Android intent scheme
+        var url = 'intent://www.youtube.com/' + channelHandle + '#Intent;package=com.google.android.youtube;scheme=https;end';
+        window.location.href = url;
+    } else if (/iphone|ipad|ipod/.test(ua)) {
+        // iOS YouTube URL scheme
+        var url = 'youtube://www.youtube.com/' + channelHandle;
+        window.location.href = url;
 
-    // Append the link to the body
-    document.body.appendChild(link);
-
-    // Programmatically click the link to open the app
-    link.click();
-
-    // Remove the link from the body
-    document.body.removeChild(link);
+        // Fallback to browser if YouTube app is not installed
+        setTimeout(function() {
+            window.location.href = fallbackUrl;
+        }, 2000);
+    } else {
+        // Fallback for other devices
+        window.location.href = fallbackUrl;
+    }
 }
 
 function openPAT() {
