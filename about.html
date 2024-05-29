@@ -119,7 +119,7 @@
         <div class="icons">
             <button onclick="openIG()"><i class="fa-brands fa-instagram"></i></button>
             <button onclick="openTT()"><i class="fa-brands fa-tiktok"></i></button>
-            <button onclick="openYT()"><i class="fa-brands fa-youtube"></i></button>
+            <button onclick="openYouTubeChannel()"><i class="fa-brands fa-youtube"></i></button>
             <div class="divider"></div>
             <button><i class="fa-brands fa-google-play"></i></button>
             <button><i class="fa-brands fa-paypal"></i>PayPal</button>
@@ -162,17 +162,22 @@ function openTT() {
     }, 1000); // Adjust the timeout as needed
 }
 
-function openYT() {
-    var appUrl = 'vnd.youtube://user/ADQfm_';
-    var webUrl = 'https://www.youtube.com/@ADQfm_';
+function openYouTubeChannel() {
+    var channelHandle = '@ADQfm_';
+    var url = 'youtube://www.youtube.com/' + channelHandle;
 
-    // Attempt to open the YouTube app
-    window.location = appUrl;
+    // Create a link element
+    var link = document.createElement('a');
+    link.href = url;
 
-    // Fallback to web URL if the app is not installed
-    setTimeout(function() {
-        window.open(webUrl, '_blank');
-    }, 1000); // Adjust the timeout as needed
+    // Append the link to the body
+    document.body.appendChild(link);
+
+    // Programmatically click the link to open the app
+    link.click();
+
+    // Remove the link from the body
+    document.body.removeChild(link);
 }
 
 function openPAT() {
