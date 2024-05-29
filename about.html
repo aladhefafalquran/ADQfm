@@ -137,75 +137,10 @@
         }
 
         function openIG() {
-            var appUrl = 'instagram://user?username=adqfm_';
-            var webUrl = 'https://www.instagram.com/adqfm_/';
+    var appUrl = 'instagram://user?username=adqfm_';
+    var webUrl = 'https://www.instagram.com/adqfm_/';
 
-            // Attempt to open the Instagram app
-            window.location = appUrl;
-
-            // Fallback to web URL if the app is not installed
-            setTimeout(function() {
-                window.open(webUrl, '_blank');
-            }, 1000); // Adjust the timeout as needed
-        }
-
-        function openTT() {
-            var appUrl = 'instagram://user?username=@adqfm_';
-            var webUrl = 'https://www.tiktok.com/@adqfm_';
-
-            // Attempt to open the TT app
-            window.location = appUrl;
-
-            // Fallback to web URL if the app is not installed
-            setTimeout(function() {
-                window.open(webUrl, '_blank');
-            }, 1000); // Adjust the timeout as needed
-        }
-        
-        function openYT() {
-            var appUrl = 'instagram://user?username=@ADQfm_';
-            var webUrl = 'https://www.youtube.com/@ADQfm_';
-
-            // Attempt to open the Instagram app
-            window.location = appUrl;
-
-            // Fallback to web URL if the app is not installed
-            setTimeout(function() {
-                window.open(webUrl, '_blank');
-            }, 1000); // Adjust the timeout as needed
-        }
-
-        function openPAT() {
-            var appUrl = 'patreon://user?username=ala_dhefe_alquraan';
-            var webUrl = 'https://patreon.com/ala_dhefe_alquraan?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink';
-
-            // Attempt to open the Patreon app
-            window.location = appUrl;
-
-            // Fallback to web URL if the app is not installed
-            setTimeout(function() {
-                window.open(webUrl, '_blank');
-            }, 1000); // Adjust the timeout as needed
-        }
-
-        function openzeno() {
-            var appUrl = 'patreon://user?username=adqfm-athaaat-aaly-dfaf-alkran/';
-            var webUrl = 'https://zeno.fm/radio/adqfm-athaaat-aaly-dfaf-alkran/';
-
-            // Attempt to open the Patreon app
-            window.location = appUrl;
-
-            // Fallback to web URL if the app is not installed
-            setTimeout(function() {
-                window.open(webUrl, '_blank');
-            }, 1000); // Adjust the timeout as needed
-        }
-
-        function openAppRadioFM() {
-    var appUrl = 'appradiofm://radio/Ala-Dhefef-Al-Quraan-Cario-Cairo-EG-8mnwy'; // Hypothetical scheme
-    var webUrl = 'https://appradiofm.com/radio/Ala-Dhefef-Al-Quraan-Cario-Cairo-EG-8mnwy';
-
-    // Attempt to open the AppRadioFM app
+    // Attempt to open the Instagram app
     window.location = appUrl;
 
     // Fallback to web URL if the app is not installed
@@ -213,6 +148,72 @@
         window.open(webUrl, '_blank');
     }, 1000); // Adjust the timeout as needed
 }
+
+function openTT() {
+    var appUrl = 'snssdk1128://user/profile/adqfm_';
+    var webUrl = 'https://www.tiktok.com/@adqfm_';
+
+    // Attempt to open the TikTok app
+    window.location = appUrl;
+
+    // Fallback to web URL if the app is not installed
+    setTimeout(function() {
+        window.open(webUrl, '_blank');
+    }, 1000); // Adjust the timeout as needed
+}
+
+function openYT() {
+    var appUrl = 'vnd.youtube://user/ADQfm_'; // Use channel ID if possible for better accuracy
+    var webUrl = 'https://www.youtube.com/@ADQfm_';
+
+    // Attempt to open the YouTube app
+    window.location = appUrl;
+
+    // Fallback to web URL if the app is not installed
+    setTimeout(function() {
+        window.open(webUrl, '_blank');
+    }, 1000); // Adjust the timeout as needed
+}
+
+function openPAT() {
+    var appUrl = 'https://www.patreon.com/ala_dhefe_alquraan'; // Patreon does not have a well-documented app URL scheme
+    var webUrl = 'https://patreon.com/ala_dhefe_alquraan?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink';
+
+    // Attempt to open the Patreon web URL (opens in app if installed)
+    window.location = appUrl;
+
+    // Fallback to web URL if the app is not installed
+    setTimeout(function() {
+        window.open(webUrl, '_blank');
+    }, 1000); // Adjust the timeout as needed
+}
+
+function openzeno() {
+    var appUrl = 'https://zeno.fm/radio/adqfm-athaaat-aaly-dfaf-alkran/'; // Zeno.fm does not have a custom URL scheme
+    var webUrl = 'https://zeno.fm/radio/adqfm-athaaat-aaly-dfaf-alkran/';
+
+    // Attempt to open the Zeno.fm web URL (opens in app if installed)
+    window.location = appUrl;
+
+    // Fallback to web URL if the app is not installed
+    setTimeout(function() {
+        window.open(webUrl, '_blank');
+    }, 1000); // Adjust the timeout as needed
+}
+
+function openAppRadioFM() {
+    var appUrl = 'https://appradiofm.com/radio/Ala-Dhefef-Al-Quraan-Cario-Cairo-EG-8mnwy'; // AppRadioFM does not have a custom URL scheme
+    var webUrl = 'https://appradiofm.com/radio/Ala-Dhefef-Al-Quraan-Cario-Cairo-EG-8mnwy';
+
+    // Attempt to open the AppRadioFM web URL (opens in app if installed)
+    window.location = appUrl;
+
+    // Fallback to web URL if the app is not installed
+    setTimeout(function() {
+        window.open(webUrl, '_blank');
+    }, 1000); // Adjust the timeout as needed
+}
+
 
     </script>
 </body>
