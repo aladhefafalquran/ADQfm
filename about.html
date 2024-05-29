@@ -165,9 +165,8 @@ function openTT() {
 function openYouTubeChannel() {
     // The YouTube channel URL
     var webUrl = "https://www.youtube.com/@ADQfm_";
-
-    // Attempt to open the YouTube app
-    var appUrl = "vnd.youtube://www.youtube.com/@ADQfm_"; // Use the correct deep link format if known
+    // The YouTube app URL (with the correct channel ID)
+    var appUrl = "youtube://www.youtube.com/@ADQfm_";
 
     // Check if the user is on a mobile device
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
