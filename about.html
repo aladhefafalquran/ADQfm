@@ -163,29 +163,24 @@ function openTT() {
 }
 
 function openYouTubeChannel() {
-    var channelHandle = '@ADQfm_';
-    var fallbackUrl = 'https://www.youtube.com/' + channelHandle;
-    var androidIntentUrl = 'intent://www.youtube.com/' + channelHandle + '#Intent;package=com.google.android.youtube;scheme=https;end';
-    var iosUrl = 'vnd.youtube://www.youtube.com/' + channelHandle;
+    // The YouTube channel URL
+    var webUrl = "https://www.youtube.com/@ADQfm_";
+    var appUrl = "vnd.youtube://www.youtube.com/channel/UCADQfm_"; // Update with the correct channel ID
 
-    var ua = navigator.userAgent.toLowerCase();
-    var isAndroid = ua.indexOf('android') > -1;
-    var isIOS = /iphone|ipad|ipod/.test(ua);
+    // Check if the user is on a mobile device
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    if (isAndroid) {
-        // Attempt to open the YouTube app on Android
-        window.location.href = androidIntentUrl;
-    } else if (isIOS) {
-        // Attempt to open the YouTube app on iOS
-        window.location.href = iosUrl;
+    if (isMobile) {
+        // Try to open the YouTube app
+        window.location = appUrl;
 
-        // Fallback to browser if YouTube app is not installed
+        // Fallback to web URL after a delay
         setTimeout(function() {
-            window.location.href = fallbackUrl;
-        }, 2000);
+            window.location = webUrl;
+        }, 500);
     } else {
-        // Fallback to the web for other devices
-        window.location.href = fallbackUrl;
+        // Open the web URL on desktop
+        window.location = webUrl;
     }
 }
 
