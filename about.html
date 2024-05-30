@@ -186,25 +186,26 @@ function openYouTubeChannel() {
 }
 
 document.getElementById('openPatreon').addEventListener('click', function() {
-            // Define the Patreon web URL
-            var patreonWebUrl = 'https://patreon.com/ala_dhefe_alquraan?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink';
+            // Define the Patreon URL
+            var patreonUrl = 'https://patreon.com/ala_dhefe_alquraan?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink';
 
-            // Try to open the Patreon app using the URL scheme
-            var patreonAppUrl = 'patreon://user?uri=' + encodeURIComponent(patreonWebUrl);
+            // Create a link element
+            var a = document.createElement('a');
+            a.href = patreonUrl;
 
-            // Create an invisible iframe to attempt opening the Patreon app
-            var iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.src = patreonAppUrl;
-            document.body.appendChild(iframe);
+            // Set the target to open the app if installed
+            a.setAttribute('target', '_blank');
 
-            // Fallback to the web URL after a short delay
-            setTimeout(function() {
-                window.location.href = patreonWebUrl;
-                document.body.removeChild(iframe);
-            }, 1500);
+            // Append the link to the body
+            document.body.appendChild(a);
+
+            // Click the link
+            a.click();
+
+            // Remove the link after clicking
+            document.body.removeChild(a);
         });
-
+        
 function openzeno() {
     var webUrl = 'https://zeno.fm/radio/adqfm-athaaat-aaly-dfaf-alkran/';
 
