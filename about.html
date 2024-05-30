@@ -149,11 +149,11 @@
     }, 1000); // Adjust the timeout as needed
 }
 
-document.getElementById('openTiktok').addEventListener('click', function() {
+ document.getElementById('openTiktok').addEventListener('click', function() {
             // Define the TikTok URL scheme for the profile
-            var tiktokUrlScheme = 'tiktok://user/@adqfm_';
+            var tiktokUrlScheme = 'intent://www.tiktok.com/@adqfm_#Intent;package=com.zhiliaoapp.musically;scheme=https;end';
 
-            // Open the TikTok app if installed, otherwise fallback to the web URL
+            // Try to open the TikTok app
             window.location.href = tiktokUrlScheme;
             
             // Fallback to the web URL in case the app is not installed
