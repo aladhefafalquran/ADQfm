@@ -223,19 +223,18 @@
             playPauseButton.innerHTML = '<img src = "icons/play.svg"/>';
         });
 
-        const muteButton = document.getElementById('mute-button');
-const volumeIcon = document.getElementById('volume-icon');
-const audioPlayer = /* Your audio player element */;
+       document.getElementById('mute-btn').addEventListener('click', function() {
+    var muteIcon = document.getElementById('mute-icon');
 
-muteButton.addEventListener('click', () => {
-    if (audioPlayer.volume === 0) {
-        audioPlayer.volume = 1;
-        volumeIcon.src = "icons/volume-high.svg";
+    if (audioPlayer.muted) {
+        audioPlayer.muted = false;
+        muteIcon.src = 'icons/volume-high.svg';
     } else {
-        audioPlayer.volume = 0;
-        volumeIcon.src = "icons/volume-xmark.svg";
+        audioPlayer.muted = true;
+        muteIcon.src = 'icons/volume-xmark.svg';
     }
 });
+
 
 
         document.getElementById('volume-control').addEventListener('input', () => {
