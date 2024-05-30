@@ -238,8 +238,37 @@
         document.getElementById('volume-control').addEventListener('input', () => {
             audioPlayer.volume = document.getElementById('volume-control').value;
         });
+        /* قفل اي حاجة تتيح فتح ال DevTools*/
+        /* Disable Right-Click */
+        document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+        /*Disable DevTools Shortcuts*/
+        document.onkeydown = function(e) {
+        // Disable F12
+        if (e.key === "F12") {
+            e.preventDefault();
+        }
+        // Disable Ctrl+Shift+I
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+            e.preventDefault();
+        }
+        // Disable Ctrl+Shift+J
+        if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+            e.preventDefault();
+        }
+        // Disable Ctrl+Shift+C
+        if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+            e.preventDefault();
+        }
+        // Disable Ctrl+U
+        if (e.ctrlKey && e.key === 'U') {
+            e.preventDefault();
+        }
+    };
+        /* Disable Viewing Source Code by Putting It All Together*/
         
     </script>
-    <script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+    
 </body>
 </html>
