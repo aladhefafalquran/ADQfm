@@ -159,9 +159,6 @@
         #volume-control:focus::-webkit-slider-runnable-track {
             background-color: #ffffff;
         }
-        .img {
-            draggable="false"
-        }
     </style>
 </head>
 <body>
@@ -171,13 +168,13 @@
         <div class="besm"><i>بسم الله الرحمن الرحيم</i></div>
         <div class="info" onclick="window.open('./about', '_blank');">
             <button style="padding: 0; border: none; background: none; color: #ffffff;">
-                <img src = "icons/info.svg"/>
+                <img src = "icons/info.svg" draggable="false"/>
             </button>
         </div>
     </div>
 
     <div class="Logo">
-        <img src="https://i.ibb.co/mGmNSp6/Logo.png" style="height: 250px; width: 350px;">
+        <img src="https://i.ibb.co/mGmNSp6/Logo.png" style="height: 250px; width: 350px;" draggable="false">
     </div>
 
     <div class="aya"><i>{ كِتَابٌ أَنزَلْنَاهُ إِلَيْكَ مُبَارَكٌ لّيَدَّبّرُوا آيَاتِهِ وَلِيَتَذَكّرَ أُولُو الْأَلْبَابِ }</i></div>
@@ -187,12 +184,12 @@
         <div class="BTNS">
             <div class="PLYPUSEbtn" id="play-pause-btn">
                 <button style="padding: 0; border: none; background: none;">
-                    <img src = "icons/play.svg"/>
+                    <img src = "icons/play.svg" draggable="false"/>
                 </button>
             </div>
             <div class="STOPbtn" id="stop-btn">
                 <button style="padding: 0; border: none; background: none;">
-                    <img src = "icons/stop-solid.svg"/>
+                    <img src = "icons/stop-solid.svg" draggable="false"/>
                 </button>
             </div>
             <div class="VLSL" dir="ltr">
@@ -200,7 +197,7 @@
             </div>
             <div class="MUTEbtn" id="mute-btn">
                 <button style="padding: 0; border: none; background: none;">
-                    <img src = "icons/volume-high.svg"/>
+                    <img src = "icons/volume-high.svg" draggable="false"/>
                 </button>
             </div>
         </div>
@@ -215,17 +212,17 @@
         playPauseButton.addEventListener('click', () => {
             if (audioPlayer.paused) {
                 audioPlayer.play();
-                playPauseButton.innerHTML = '<img src = "icons/pause.svg"/>';
+                playPauseButton.innerHTML = '<img src = "icons/pause.svg" draggable="false"/>';
             } else {
                 audioPlayer.pause();
-                playPauseButton.innerHTML = '<img src = "icons/play.svg"/>';
+                playPauseButton.innerHTML = '<img src = "icons/play.svg" draggable="false"/>';
             }
         });
 
         document.getElementById('stop-btn').addEventListener('click', () => {
             audioPlayer.pause();
             audioPlayer.currentTime = 0;
-            playPauseButton.innerHTML = '<img src = "icons/play.svg"/>';
+            playPauseButton.innerHTML = '<img src = "icons/play.svg" draggable="false"/>';
         });
 
        document.getElementById('mute-btn').addEventListener('click', function() {
@@ -233,10 +230,10 @@
 
     if (audioPlayer.muted) {
         audioPlayer.muted = false;
-        muteButton.innerHTML = '<img src = "icons/volume-high.svg"/>';
+        muteButton.innerHTML = '<img src = "icons/volume-high.svg" draggable="false"/>';
     } else {
         audioPlayer.muted = true;
-        muteButton.innerHTML = '<img src = "icons/volume-xmark.svg"/>';
+        muteButton.innerHTML = '<img src = "icons/volume-xmark.svg" draggable="false"/>';
     }
 });
 
