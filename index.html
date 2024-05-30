@@ -228,10 +228,10 @@
 
     if (audioPlayer.muted) {
         audioPlayer.muted = false;
-        muteIcon.src = 'icons/volume-high.svg';
+        muteIcon.innerHTML = '<img src = "icons/volume-high.svg"/>';
     } else {
         audioPlayer.muted = true;
-        muteIcon.src = 'icons/volume-xmark.svg';
+        muteIcon.innerHTML = '<img src = "icons/volume-xmark.svg"/>';
     }
 });
 
