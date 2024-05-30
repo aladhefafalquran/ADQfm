@@ -118,7 +118,7 @@
         </div>
         <div class="icons">
             <button onclick="openIG()"><i class="fa-brands fa-instagram"></i></button>
-            <button onclick="openTT()"><i class="fa-brands fa-tiktok"></i></button>
+            <button id="openTiktok"><i class="fa-brands fa-tiktok"></i></button>
             <button onclick="openYouTubeChannel()"><i class="fa-brands fa-youtube"></i></button>
             <div class="divider"></div>
             <button><i class="fa-brands fa-google-play"></i></button>
@@ -149,18 +149,18 @@
     }, 1000); // Adjust the timeout as needed
 }
 
-function openTT() {
-    var appUrl = 'snssdk1233://user/profile/@adqfm_';
-    var webUrl = 'https://www.tiktok.com/@adqfm_';
+document.getElementById('openTiktok').addEventListener('click', function() {
+            // Define the TikTok URL scheme for the profile
+            var tiktokUrlScheme = 'tiktok://user/@adqfm_';
 
-    // Attempt to open the TikTok app
-    window.location = appUrl;
-
-    // Fallback to web URL if the app is not installed
-    setTimeout(function() {
-        window.open(webUrl, '_blank');
-    }, 1000); // Adjust the timeout as needed
-}
+            // Open the TikTok app if installed, otherwise fallback to the web URL
+            window.location.href = tiktokUrlScheme;
+            
+            // Fallback to the web URL in case the app is not installed
+            setTimeout(function() {
+                window.location.href = 'https://www.tiktok.com/@adqfm_';
+            }, 1500);
+        });
 
 function openYouTubeChannel() {
     // The YouTube channel URL
