@@ -22,20 +22,7 @@
             margin: 0;
         }
 
-        /* Disable dragging for all images */
-.img {
-    user-drag: none; 
-    user-select: none; 
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-}
 
-/* Optionally, disable right-click on images */
-.img {
-    -webkit-touch-callout: none;
-}
 
         .Logo {
             margin-top: 20px;
@@ -187,7 +174,7 @@
     </div>
 
     <div class="Logo">
-        <img src="https://i.ibb.co/mGmNSp6/Logo.png" style="height: 250px; width: 350px;">
+        <img src="https://i.ibb.co/mGmNSp6/Logo.png" style="height: 250px; width: 350px;" draggable="false">
     </div>
 
     <div class="aya"><i>{ كِتَابٌ أَنزَلْنَاهُ إِلَيْكَ مُبَارَكٌ لّيَدَّبّرُوا آيَاتِهِ وَلِيَتَذَكّرَ أُولُو الْأَلْبَابِ }</i></div>
@@ -257,7 +244,7 @@
         });
         /* قفل اي حاجة تتيح فتح ال DevTools*/
         /* Disable Right-Click */
-       /* document.addEventListener('contextmenu', function(e) {
+        document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
         /*Disable DevTools Shortcuts*/
