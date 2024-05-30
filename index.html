@@ -182,12 +182,12 @@
         <div class="BTNS">
             <div class="PLYPUSEbtn" id="play-pause-btn">
                 <button style="padding: 0; border: none; background: none;">
-                    <i class="fa-solid fa-play fa-2xl" style="color: #ffffff;"></i>
+                    <img src = "icons/play.svg"/>
                 </button>
             </div>
             <div class="STOPbtn" id="stop-btn">
                 <button style="padding: 0; border: none; background: none;">
-                    <i class="fa-solid fa-stop fa-2xl" style="color: #ffffff;"></i>
+                    <img src = "icons/stop.svg"/>
                 </button>
             </div>
             <div class="VLSL" dir="ltr">
@@ -195,7 +195,7 @@
             </div>
             <div class="MUTEbtn" id="mute-btn">
                 <button style="padding: 0; border: none; background: none;">
-                    <i class="fa-solid fa-volume-high fa-2xl" id="volume-icon" style="color: #ffffff;"></i>
+                    <img src = "icons/volume-high.svg"/>
                 </button>
             </div>
         </div>
@@ -210,28 +210,28 @@
         playPauseButton.addEventListener('click', () => {
             if (audioPlayer.paused) {
                 audioPlayer.play();
-                playPauseButton.innerHTML = '<i class="fa-solid fa-pause fa-2xl" style="color: #ffffff;"></i>';
+                playPauseButton.innerHTML = '<img src = "icons/pause.svg"/>';
             } else {
                 audioPlayer.pause();
-                playPauseButton.innerHTML = '<i class="fa-solid fa-play fa-2xl" style="color: #ffffff;"></i>';
+                playPauseButton.innerHTML = '<img src = "icons/play.svg"/>';
             }
         });
 
         document.getElementById('stop-btn').addEventListener('click', () => {
             audioPlayer.pause();
             audioPlayer.currentTime = 0;
-            playPauseButton.innerHTML = '<i class="fa-solid fa-play fa-2xl" style="color: #ffffff;"></i>';
+            playPauseButton.innerHTML = '<img src = "icons/play.svg"/>';
         });
 
         muteButton.addEventListener('click', () => {
             if (audioPlayer.volume === 0) {
                 audioPlayer.volume = 1;
-                volumeIcon.classList.remove('fa-volume-xmark');
-                volumeIcon.classList.add('fa-volume-high');
+                volumeIcon.classList.remove('v');
+                volumeIcon.classList.add('<img src = "icons/volume-high.svg"/>');
             } else {
                 audioPlayer.volume = 0;
-                volumeIcon.classList.remove('fa-volume-high');
-                volumeIcon.classList.add('fa-volume-xmark');
+                volumeIcon.classList.remove('<img src = "icons/volume-high.svg"/>');
+                volumeIcon.classList.add('<img src = "icons/volume-xmark.svg"/>');
             }
         });
 
