@@ -223,7 +223,11 @@
             playPauseButton.innerHTML = '<img src = "icons/play.svg"/>';
         });
 
-        muteButton.addEventListener('click', () => {
+        const muteButton = document.getElementById('mute-button');
+const volumeIcon = document.getElementById('volume-icon');
+const audioPlayer = /* Your audio player element */;
+
+muteButton.addEventListener('click', () => {
     if (audioPlayer.volume === 0) {
         audioPlayer.volume = 1;
         volumeIcon.src = "icons/volume-high.svg";
@@ -232,6 +236,7 @@
         volumeIcon.src = "icons/volume-xmark.svg";
     }
 });
+
 
         document.getElementById('volume-control').addEventListener('input', () => {
             audioPlayer.volume = document.getElementById('volume-control').value;
