@@ -123,7 +123,7 @@
             <div class="divider"></div>
             <button><i class="fa-brands fa-google-play"></i></button>
             <button><i class="fa-brands fa-paypal"></i>PayPal</button>
-            <button onclick="openPAT()"><i class="fa-brands fa-patreon"></i>Patreon</button>
+            <button id="openPatreon"><i class="fa-brands fa-patreon"></i>Patreon</button>
             <div class="divider"></div>
             <button onclick="openzeno()" style="margin-top: 20px;"><img src = "zeno.svg"/><div></div></button>
             <button onclick="openAppRadioFM()"><img src = "https://i.ibb.co/HXj6wh2/rfmbrandimg.png" style="height: 30px;"/></button>
@@ -185,12 +185,18 @@ function openYouTubeChannel() {
     }
 }
 
-function openPAT() {
-    var webUrl = 'https://patreon.com/ala_dhefe_alquraan?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink';
+document.getElementById('openPatreon').addEventListener('click', function() {
+            // Define the Patreon URL scheme with intent for Android
+            var patreonUrlScheme = 'intent://patreon.com/ala_dhefe_alquraan?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink#Intent;package=com.patreon.android;scheme=https;end';
 
-    // Open the web URL (Patreon app does not have a well-documented custom URL scheme)
-    window.open(webUrl, '_blank');
-}
+            // Try to open the Patreon app
+            window.location.href = patreonUrlScheme;
+            
+            // Fallback to the web URL in case the app is not installed
+            setTimeout(function() {
+                window.location.href = 'https://patreon.com/ala_dhefe_alquraan?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink';
+            }, 1500);
+        });
 
 function openzeno() {
     var webUrl = 'https://zeno.fm/radio/adqfm-athaaat-aaly-dfaf-alkran/';
