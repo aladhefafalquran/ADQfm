@@ -137,55 +137,56 @@
         }
 
         function openIG() {
-    var appUrl = 'instagram://user?username=adqfm_';
-    var webUrl = 'https://www.instagram.com/adqfm_/';
+            var appUrl = 'instagram://user?username=adqfm_';
+            var webUrl = 'https://www.instagram.com/adqfm_/';
 
-    // Attempt to open the Instagram app
-    window.location = appUrl;
+            // Attempt to open the Instagram app
+            window.location = appUrl;
 
-    // Fallback to web URL if the app is not installed
-    setTimeout(function() {
-        window.open(webUrl, '_blank');
-    }, 1000); // Adjust the timeout as needed
-}
+            // Fallback to web URL if the app is not installed
+            setTimeout(function() {
+                window.open(webUrl, '_blank');
+            }, 1000); // Adjust the timeout as needed
+        }
 
- document.getElementById('openTiktok').addEventListener('click', function() {
+        document.getElementById('openTiktok').addEventListener('click', function() {
             // Define the TikTok URL scheme for the profile
             var tiktokUrlScheme = 'intent://www.tiktok.com/@adqfm_#Intent;package=com.zhiliaoapp.musically;scheme=https;end';
+            var webUrl = 'https://www.tiktok.com/@adqfm_';
 
             // Try to open the TikTok app
             window.location.href = tiktokUrlScheme;
             
             // Fallback to the web URL in case the app is not installed
             setTimeout(function() {
-                window.location.href = 'https://www.tiktok.com/@adqfm_';
+                window.open(webUrl, '_blank');
             }, 1500);
         });
 
-function openYouTubeChannel() {
-    // The YouTube channel URL
-    var webUrl = "https://www.youtube.com/@ADQfm_";
-    // The YouTube app URL (with the correct channel ID)
-    var appUrl = "vnd.youtube:@ADQfm_";
+        function openYouTubeChannel() {
+            // The YouTube channel URL
+            var webUrl = "https://www.youtube.com/@ADQfm_";
+            // The YouTube app URL (with the correct channel ID)
+            var appUrl = "vnd.youtube:@ADQfm_";
 
-    // Check if the user is on a mobile device
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            // Check if the user is on a mobile device
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    if (isMobile) {
-        // Try to open the YouTube app
-        window.location = appUrl;
+            if (isMobile) {
+                // Try to open the YouTube app
+                window.location = appUrl;
 
-        // Fallback to web URL after a delay
-        setTimeout(function() {
-            window.location = webUrl;
-        }, 500);
-    } else {
-        // Open the web URL on desktop
-        window.location = webUrl;
-    }
-}
+                // Fallback to web URL after a delay
+                setTimeout(function() {
+                    window.open(webUrl, '_blank');
+                }, 500);
+            } else {
+                // Open the web URL on desktop
+                window.open(webUrl, '_blank');
+            }
+        }
 
-document.getElementById('openPatreon').addEventListener('click', function() {
+        document.getElementById('openPatreon').addEventListener('click', function() {
             // Define the Patreon URL
             var patreonUrl = 'https://patreon.com/ala_dhefe_alquraan?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink';
 
@@ -205,6 +206,10 @@ document.getElementById('openPatreon').addEventListener('click', function() {
             // Remove the link after clicking
             document.body.removeChild(a);
         });
+
+        // Event listeners for the buttons
+        document.getElementById('openInstagram').addEventListener('click', openIG);
+        document.getElementById('openYouTube').addEventListener('click', openYouTubeChannel);
         
 function openzeno() {
     var webUrl = 'https://zeno.fm/radio/adqfm-athaaat-aaly-dfaf-alkran/';
