@@ -186,15 +186,22 @@ function openYouTubeChannel() {
 }
 
 document.getElementById('openPatreon').addEventListener('click', function() {
-            // Define the Patreon URL scheme with intent for Android
-            var patreonUrlScheme = 'intent://patreon.com/ala_dhefe_alquraan?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink#Intent;package=com.patreon.android;scheme=https;end';
+            // Define the Patreon web URL
+            var patreonWebUrl = 'https://patreon.com/ala_dhefe_alquraan?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink';
 
-            // Try to open the Patreon app
-            window.location.href = patreonUrlScheme;
-            
-            // Fallback to the web URL in case the app is not installed
+            // Try to open the Patreon app using the URL scheme
+            var patreonAppUrl = 'patreon://user?uri=' + encodeURIComponent(patreonWebUrl);
+
+            // Create an invisible iframe to attempt opening the Patreon app
+            var iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = patreonAppUrl;
+            document.body.appendChild(iframe);
+
+            // Fallback to the web URL after a short delay
             setTimeout(function() {
-                window.location.href = 'https://patreon.com/ala_dhefe_alquraan?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink';
+                window.location.href = patreonWebUrl;
+                document.body.removeChild(iframe);
             }, 1500);
         });
 
